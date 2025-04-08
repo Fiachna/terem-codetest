@@ -4,14 +4,14 @@ import styles from './card.module.scss';
 
 interface CardProps extends PropsWithChildren {
 	style?: "default" | "invisible"
+	corners?: "sharp" | "round"
 }
 
-const Card: FC<CardProps> = ({ children, style="default" }) => {
+const Card: FC<CardProps> = ({ children, style="default", corners="round" }) => {
 	const classNames = [styles.card]
 
-	if (style === "invisible") {
-		classNames.push(styles.invisible)
-	}
+	style === "invisible" && classNames.push(styles.invisible)
+	corners === "sharp" && classNames.push(styles.sharp)
 
 	return (
 		<div className={classNames.join(" ")}>
