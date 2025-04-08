@@ -11,5 +11,5 @@ Code Challenge by Fiachna Carter for Terem
 
 ## Decisions
 
- - Opted for vanilla CSS over tailwind or the like to show I know my way around it
+ - Used tailwind as the design images show components which resemble tailwind styles extremely closely
  - Built mobile view first then added desktop modifications
