@@ -1,0 +1,78 @@
+@use "../../../styles/vars.scss" as vars;
+
+.menu-button {
+	appearance: none;
+	background: transparent;
+	border: none;
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		display: none;
+	}
+}
+
+.navigation {
+	position: absolute;
+	top: 5rem;
+	left: 1.5rem;
+	right: 1.5rem;
+
+	border-radius: 1rem;
+	padding: 1.5rem;
+
+	background-color: vars.$background-color-3;
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		position: inherit;
+		
+		display: flex;
+		justify-content: space-between;
+		flex: auto;
+		padding: 0;
+		border-radius: inherit;
+		background-color: transparent;
+	}
+}
+
+.navigation-list {
+	padding: 1rem 0;
+	
+	list-style: none;
+	font-weight: 700;
+	color: white;
+	text-align: center;
+
+	&:first-child {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		display: flex;
+		padding: 0;
+
+		color: vars.$primary-color-2;
+
+		&:first-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.navigation-item {
+	padding: 1rem;
+}
+
+.link:hover {
+	color: vars.$neutral-color-3;
+}
+
+.navigation-button-item {
+	composes: navigation-item;
+	padding: 0 1rem;
+}
+
+.wrapper {
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		display: flex;
+		flex: auto;
+	}
+}
