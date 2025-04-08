@@ -1,0 +1,19 @@
+@use "../../../styles/vars.scss" as vars;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+
+	background-color: vars.$background-color-2;
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		justify-content: normal;
+	}
+}
+
+.logo {
+	fill: #34313D;
+	margin-right: 3rem;
+}
