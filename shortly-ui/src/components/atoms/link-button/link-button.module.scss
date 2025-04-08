@@ -1,0 +1,14 @@
+@use "../../../styles/vars.scss" as vars;
+
+.button {
+	display: inline-block;
+	padding: 0.8rem 3rem;
+	border-radius: 999rem;
+
+	background-color: vars.$primary-color-1;
+	color: white;
+
+	&:hover {
+		color: white;
+	}
+}
