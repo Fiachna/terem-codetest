@@ -1,3 +1,5 @@
+@import "./styles/vars.scss";
+
 /* Standard CSS reset from https: //www.joshwcomeau.com/css/custom-css-reset/ */
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -75,4 +77,16 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/*
+  End CSS Reset
+  Start global styles
+*/
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
 }
