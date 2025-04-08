@@ -1,4 +1,4 @@
-@import "./styles/vars.scss";
+@use "./styles/vars.scss" as vars;
 
 /* Standard CSS reset from https: //www.joshwcomeau.com/css/custom-css-reset/ */
 
@@ -86,7 +86,25 @@ h6 {
 
 body {
   font-family: "Poppins", sans-serif;
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
   font-size: 18px;
+  color: vars.$neutral-color-2;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+
+  background-color: vars.$background-color-1;
+}
+
+a {
+  text-decoration: none;
+  color: vars.$primary-color-1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: vars.$neutral-color-4;
 }
