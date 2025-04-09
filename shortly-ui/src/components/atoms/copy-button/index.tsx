@@ -2,9 +2,15 @@ import { FC } from "react";
 import Button from "@/components/atoms/button";
 import { BaseComponentProps } from "@/types/base-component-props";
 
-const CopyButton: FC<BaseComponentProps> = () => {
+interface CopyButtonProps extends BaseComponentProps {
+	toCopy: string;
+}
+
+const CopyButton: FC<CopyButtonProps> = ({ toCopy }) => {
+	const copyToClipboard = () => { navigator.clipboard.writeText(toCopy) }
+
 	return (
-		<Button>Copy</Button>
+		<Button onClick={copyToClipboard}>Copy</Button>
 	)
 }
 
