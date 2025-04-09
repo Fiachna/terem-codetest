@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Card from "@/components/atoms/card";
 import { BaseComponentProps } from "@/types/base-component-props";
 
 import styles from './link-card.module.scss';
@@ -12,13 +11,13 @@ interface LinkCardProps extends BaseComponentProps {
 
 const LinkCard: FC<LinkCardProps> = ({ originalUrl, shortenedUrl }) => {
 	return (
-		<Card>
+		<div className={styles.card}>
+			<div className={styles.heading}>{originalUrl}</div>
 			<div className={styles.content}>
-				<div className={styles.heading}>{originalUrl}</div>
 				<div><a href={shortenedUrl}>{shortenedUrl}</a></div>
 				<CopyButton />
 			</div>
-		</Card>
+		</div>
 	)
 }
 

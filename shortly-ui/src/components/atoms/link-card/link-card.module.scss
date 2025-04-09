@@ -1,10 +1,48 @@
 @use '../../../styles/vars.scss' as vars;
 
-.heading {
-	color: vars.$neutral-color-4;
-	border-bottom: 1px solid vars.$background-color-1;
+.card {
+	
+	border-radius: 1rem;
+	margin: 1.5rem;
+
+	background-color: vars.$background-color-2;
+
+	text-align: center;
+	text-overflow: ellipsis;
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1rem;
+		gap: 1rem;
+	}
 
 	@media only screen and (min-width: vars.$breakpoint-large) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 0.3rem;
+
+		font-size: 1.5rem;
+
+		.content {
+			flex-direction: row;
+			align-items: center;
+			gap: 2rem;
+			padding: 1.5rem;
+		}
+	}
+}
+
+.heading {
+	padding: 1rem;
+	border-bottom: 1px solid vars.$background-color-1;
+	
+	color: vars.$neutral-color-4;
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		padding: 1.5rem;
 		border-bottom: none;
 	}
 }
