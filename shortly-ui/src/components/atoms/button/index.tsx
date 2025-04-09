@@ -1,13 +1,16 @@
-import { FC, PropsWithChildren } from "react"
+import { FC, MouseEventHandler, PropsWithChildren } from "react"
 import { BaseComponentProps } from "@/types/base-component-props"
+
+import styles from './button.module.scss'
 
 interface ButtonProps extends PropsWithChildren, BaseComponentProps {
 	actionType?: "button" | "submit" | "reset"
+	onClick?: MouseEventHandler
 }
 
-const Button: FC<ButtonProps> = ({ children, actionType="button" }) => {
+const Button: FC<ButtonProps> = ({ children, actionType="button", onClick }) => {
 	return (
-		<button type={actionType}>{children}</button>
+		<button className={styles.button} type={actionType} onClick={onClick}>{children}</button>
 	)
 }
 
