@@ -1,0 +1,34 @@
+@use "../../../styles/vars.scss" as vars;
+
+.text-input {
+	display: flex;
+	flex-direction: column;
+
+	input {
+		padding: 1rem;
+		border: none;
+		border-radius: 0.3rem;
+	}
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		.error-wrapper {
+			position: relative;
+		}
+
+		div.error {
+			position: absolute;
+		}
+	}
+
+	input.error {
+		border: 3px solid vars.$secondary-color-1;
+	}
+
+	div.error {
+		padding-top: 0.3rem;
+
+		text-align: left;
+		font-size: 0.9rem;
+		color: vars.$secondary-color-1;
+	}
+}
