@@ -5,12 +5,15 @@
 	background: transparent;
 	border: none;
 
+	cursor: pointer;
+
 	@media only screen and (min-width: vars.$breakpoint-large) {
 		display: none;
 	}
 }
 
 .navigation {
+	display: none;
 	position: absolute;
 	top: 5rem;
 	left: 1.5rem;
@@ -20,6 +23,10 @@
 	padding: 1.5rem;
 
 	background-color: vars.$background-color-3;
+
+	&.visible {
+		display: block;
+	}
 
 	@media only screen and (min-width: vars.$breakpoint-large) {
 		position: inherit;
