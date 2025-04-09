@@ -10,5 +10,5 @@ export default defineConfig({
       { find: "@", replacement: path.resolve(__dirname, "src")}
     ],
   },
-  plugins: [react(), svgr()],
+  plugins: [react(), svgr({ include: '**/*.svg' })],
 });

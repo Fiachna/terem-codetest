@@ -10,7 +10,7 @@ const CopyButton: FC<CopyButtonProps> = ({ toCopy }) => {
 	const copyToClipboard = () => { navigator.clipboard.writeText(toCopy) }
 
 	return (
-		<Button onClick={copyToClipboard}>Copy</Button>
+		<Button data-testid="copy-button" onClick={copyToClipboard}>Copy</Button>
 	)
 }
 

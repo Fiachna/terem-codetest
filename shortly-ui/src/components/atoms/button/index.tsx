@@ -8,9 +8,9 @@ interface ButtonProps extends PropsWithChildren, BaseComponentProps {
 	onClick?: MouseEventHandler
 }
 
-const Button: FC<ButtonProps> = ({ children, actionType="button", onClick }) => {
+const Button: FC<ButtonProps> = ({ children, actionType="button", onClick, ...props }) => {
 	return (
-		<button className={styles.button} type={actionType} onClick={onClick}>{children}</button>
+		<button {...props} className={styles.button} type={actionType} onClick={onClick}>{children}</button>
 	)
 }
 

@@ -2,7 +2,7 @@ import { createRef, FC } from "react";
 import LinkButton from "../link-button";
 import { BaseComponentProps } from "@/types/base-component-props";
 
-import HamburgerIcon from "@/assets/icon-hamburger-menu.svg?react"
+import HamburgerIcon from "@/assets/icon-hamburger-menu.svg"
 
 import styles from "./nav-menu.module.scss"
 
@@ -13,8 +13,8 @@ const NavMenu: FC<BaseComponentProps> = () => {
 
   return (
     <div className={styles.wrapper}>
-      <button className={styles["menu-button"]} type="button"><HamburgerIcon className="fill-stone-400 cursor-pointer" onClick={toggleMenu}/></button>
-      <nav className={styles.navigation} ref={navMenuRef}>
+      <button data-testid="hamburger-menu" className={styles["menu-button"]} type="button"><HamburgerIcon className="fill-stone-400 cursor-pointer" onClick={toggleMenu}/></button>
+      <nav data-testid="navigation-menu" className={styles.navigation} ref={navMenuRef}>
         <ul className={styles["navigation-list"]}>
           <li className={styles["navigation-item"]}><a className={styles.link} href="#">Features</a></li>
           <li className={styles["navigation-item"]}><a className={styles.link} href="#">Pricing</a></li>
