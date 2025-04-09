@@ -1,0 +1,79 @@
+@use "../../styles/vars.scss" as vars;
+
+.lead-in {
+	background-color: vars.$background-color-2;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 5rem;
+
+	font-size: 1.3rem;
+	line-height: 1.8;
+	color: vars.$primary-color-2;
+	text-align: center;
+
+	h1 {
+		margin: 2rem 0 1rem 0;
+
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	.blurb {
+		padding-bottom: 2rem;
+	}
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		flex-direction: row-reverse;
+		padding-bottom: 2rem;
+
+		text-align: left;
+
+		h1 {
+			font-size: 6rem;
+		}
+	}
+}
+
+.main-interaction {
+	background: linear-gradient(vars.$background-color-2 0%, vars.$background-color-2 50%, vars.$background-color-1 50%, vars.$background-color-1 100%);
+}
+
+.marketing-break {
+	margin-top: 5rem;
+
+	text-align: center;
+}
+
+.marketing-points {
+	display: flex;
+	flex-direction: column;
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		flex-direction: row;
+	}
+}
+
+.closing-cta {
+	padding: 5rem 1.5rem;
+
+	background-image: url("../../assets/bg-boost-mobile.svg");
+	background-color: vars.$background-color-3;
+	background-position-x: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	text-align: center;
+
+	h2 {
+		margin-bottom: 1rem;
+
+		color: white;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		background-image: url("../../assets/bg-boost-desktop.svg");
+	}
+}
