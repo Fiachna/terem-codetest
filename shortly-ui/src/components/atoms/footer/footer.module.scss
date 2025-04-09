@@ -1,0 +1,63 @@
+@use "../../../styles/vars.scss" as vars;
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 4rem;
+
+	background-color: vars.$neutral-color-4;
+
+	text-align: center;
+
+	h4 {
+		margin-bottom: 1rem;
+
+		color: white;
+	}
+
+	a {
+		color: vars.$neutral-color-2;
+		fill: white;
+		
+		&:hover {
+			color: vars.$primary-color-1;
+			fill: vars.$primary-color-1;
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 2rem;
+
+		li {
+			padding: 0.3rem;
+		}
+	}
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		.wrapper {
+			display: flex;
+			justify-content: space-evenly;
+			flex: auto;
+		}
+	}
+}
+
+.logo {
+	fill: white;
+	margin: 0 0 3rem 0;
+}
+
+.socials {
+	display: flex;
+	li {
+		margin: 0.5rem;
+	}
+}
