@@ -1,0 +1,10 @@
+@use '../../../styles/vars.scss' as vars;
+
+.heading {
+	color: vars.$neutral-color-4;
+	border-bottom: 1px solid vars.$background-color-1;
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		border-bottom: none;
+	}
+}

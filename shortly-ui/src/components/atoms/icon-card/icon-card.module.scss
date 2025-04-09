@@ -1,0 +1,28 @@
+@use "../../../styles/vars.scss" as vars;
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+	top: -2.5rem;
+
+	background-color: vars.$neutral-color-3;
+	border-radius: 999rem;
+
+	margin: 0 auto;
+	height: 5rem;
+	width: 5rem;
+}
+
+.wrapper {
+	position: relative;
+	margin: 5rem auto 1.5rem auto;
+	height: 2.5rem;
+	width: 5rem;
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		margin: 5rem 0 0 1.5rem;
+	}
+}
