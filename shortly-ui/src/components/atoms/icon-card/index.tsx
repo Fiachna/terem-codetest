@@ -1,24 +1,27 @@
-import { FC, PropsWithChildren, ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import { BaseComponentProps } from "@/types/base-component-props";
-
-import Card from "@/components/atoms/card";
 
 import styles from "./icon-card.module.scss";
 
-interface IconCardProps extends PropsWithChildren, BaseComponentProps {
+interface IconCardProps extends BaseComponentProps {
 	icon: ReactElement;
+	title: string;
+	content: string;
 }
 
-const IconCard: FC<IconCardProps> = ({ icon, children }) => {
+const IconCard: FC<IconCardProps> = ({ icon, title, content }) => {
 	return (
-		<Card corners="sharp">
+		<div className={styles.card}>
 			<div className={styles.wrapper}>
 				<div className={styles.icon}>
 					{icon}
 				</div>
 			</div>
-			{children}
-		</Card>
+			<div className={styles.content}>
+				<h3>{title}</h3>
+				<div>{content}</div>
+			</div>
+		</div>
 	)
 }
 

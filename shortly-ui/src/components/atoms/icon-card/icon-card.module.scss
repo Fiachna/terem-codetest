@@ -1,5 +1,26 @@
 @use "../../../styles/vars.scss" as vars;
 
+.card {
+	border-radius: 1rem;
+	margin: 1.5rem;
+
+	background-color: vars.$background-color-2;
+
+	text-align: center;
+
+	h3 {
+		padding: 0 0 1rem 0;
+	}
+
+	@media only screen and (min-width: vars.$breakpoint-large) {
+		border-radius: 0.3rem;
+	}
+}
+
+.content {
+	padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
 .icon {
 	display: flex;
 	justify-content: center;
