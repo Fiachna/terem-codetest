@@ -15,7 +15,7 @@ const LinkCard: FC<LinkCardProps> = ({ originalUrl, shortenedUrl }) => {
 			<div className={styles.heading}>{originalUrl}</div>
 			<div className={styles.content}>
 				<div><a href={shortenedUrl}>{shortenedUrl}</a></div>
-				<CopyButton />
+				<CopyButton toCopy={shortenedUrl} />
 			</div>
 		</div>
 	)
