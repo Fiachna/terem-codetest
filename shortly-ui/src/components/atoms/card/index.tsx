@@ -1,8 +1,9 @@
 import { FC, PropsWithChildren } from "react";
+import { BaseComponentProps } from "@/types/base-component-props";
 
 import styles from './card.module.scss';
 
-interface CardProps extends PropsWithChildren {
+interface CardProps extends PropsWithChildren, BaseComponentProps {
 	style?: "default" | "invisible"
 	corners?: "sharp" | "round"
 }

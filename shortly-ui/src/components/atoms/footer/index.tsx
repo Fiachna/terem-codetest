@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { BaseComponentProps } from "@/types/base-component-props";
 
 import Logo from "@/assets/logo.svg?react";
 import FacebookIcon from "@/assets/icon-facebook.svg?react"
@@ -8,7 +9,7 @@ import InstagramIcon from "@/assets/icon-instagram.svg?react"
 
 import styles from './footer.module.scss'
 
-const Footer: FC = () => {
+const Footer: FC<BaseComponentProps> = () => {
   return (
     <footer className={styles.footer}>
       <Logo className={styles.logo} />

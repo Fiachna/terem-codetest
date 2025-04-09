@@ -1,11 +1,12 @@
 import { createRef, FC } from "react";
+import LinkButton from "../link-button";
+import { BaseComponentProps } from "@/types/base-component-props";
 
 import HamburgerIcon from "@/assets/icon-hamburger-menu.svg?react"
 
 import styles from "./nav-menu.module.scss"
-import LinkButton from "../link-button";
 
-const NavMenu: FC = () => {
+const NavMenu: FC<BaseComponentProps> = () => {
   const navMenuRef = createRef<HTMLElement>()
 
   const toggleMenu = () => { navMenuRef.current?.classList.toggle(styles.visible) }

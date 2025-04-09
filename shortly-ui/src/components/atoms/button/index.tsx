@@ -1,5 +1,5 @@
-import { BaseComponentProps } from "@/types/base-component-props"
 import { FC, PropsWithChildren } from "react"
+import { BaseComponentProps } from "@/types/base-component-props"
 
 interface ButtonProps extends PropsWithChildren, BaseComponentProps {
 	actionType?: "button" | "submit" | "reset"

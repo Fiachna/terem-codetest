@@ -1,10 +1,11 @@
 import { FC } from "react";
 import Card from "@/components/atoms/card";
+import { BaseComponentProps } from "@/types/base-component-props";
 
 import styles from './link-card.module.scss';
 import CopyButton from "../copy-button";
 
-interface LinkCardProps {
+interface LinkCardProps extends BaseComponentProps {
 	originalUrl: string
 	shortenedUrl: string
 }

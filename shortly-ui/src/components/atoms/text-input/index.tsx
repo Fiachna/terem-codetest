@@ -1,6 +1,7 @@
 import { FC, Ref } from "react";
+import { BaseComponentProps } from "@/types/base-component-props";
 
-interface TextInputProps {
+interface TextInputProps extends BaseComponentProps {
 	ref?: Ref<HTMLInputElement>
 	state: "default" | "error"
 	label?: string

@@ -1,8 +1,9 @@
 import { FC } from "react";
+import { BaseComponentProps } from "@/types/base-component-props";
 
 import styles from './link-button.module.scss'
 
-interface LinkButtonProps {
+interface LinkButtonProps extends BaseComponentProps {
 	url: string
 	label: string
 }
