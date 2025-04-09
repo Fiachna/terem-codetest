@@ -13,7 +13,7 @@ const NavMenu: FC<BaseComponentProps> = () => {
 
   return (
     <div className={styles.wrapper}>
-      <button data-testid="hamburger-menu" className={styles["menu-button"]} type="button"><HamburgerIcon className="fill-stone-400 cursor-pointer" onClick={toggleMenu}/></button>
+      <button data-testid="hamburger-menu" className={styles["menu-button"]} type="button" onClick={toggleMenu}><HamburgerIcon /></button>
       <nav data-testid="navigation-menu" className={styles.navigation} ref={navMenuRef}>
         <ul className={styles["navigation-list"]}>
           <li className={styles["navigation-item"]}><a className={styles.link} href="#">Features</a></li>
