@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { BaseComponentProps } from "@/types/base-component-props";
 
-import Logo from "@/assets/logo.svg?react";
-import FacebookIcon from "@/assets/icon-facebook.svg?react"
-import TwitterIcon from "@/assets/icon-twitter.svg?react"
-import PinterestIcon from "@/assets/icon-pinterest.svg?react"
-import InstagramIcon from "@/assets/icon-instagram.svg?react"
+import Logo from "@/assets/logo.svg";
+import FacebookIcon from "@/assets/icon-facebook.svg"
+import TwitterIcon from "@/assets/icon-twitter.svg"
+import PinterestIcon from "@/assets/icon-pinterest.svg"
+import InstagramIcon from "@/assets/icon-instagram.svg"
 
 import styles from './footer.module.scss'
 

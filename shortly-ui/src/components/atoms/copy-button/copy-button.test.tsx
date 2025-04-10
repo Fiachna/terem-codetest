@@ -1,9 +1,9 @@
-import '@testing-library/jest-dom'
+import { describe, expect, it, vi } from 'vitest'
 import { render } from "@testing-library/react"
 import { screen } from '@testing-library/dom'
 import CopyButton from "."
 
-const writeText = jest.fn()
+const writeText = vi.fn()
 
 Object.assign(navigator, {
 	clipboard: {

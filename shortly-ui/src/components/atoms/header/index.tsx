@@ -2,7 +2,7 @@ import { FC } from "react";
 import NavMenu from "../nav-menu";
 import { BaseComponentProps } from "@/types/base-component-props";
 
-import Logo from "@/assets/logo.svg?react";
+import Logo from "@/assets/logo.svg";
 
 import styles from "./header.module.scss";
 

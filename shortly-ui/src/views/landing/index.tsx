@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import HeroImage from "@/assets/illustration-working.svg?react"
-import BrandRecognitionIcon from "@/assets/icon-brand-recognition.svg?react"
-import DetailedRecordsIcon from "@/assets/icon-detailed-records.svg?react"
-import FullyCustomizableIcon from "@/assets/icon-fully-customizable.svg?react"
+import HeroImage from "@/assets/illustration-working.svg"
+import BrandRecognitionIcon from "@/assets/icon-brand-recognition.svg"
+import DetailedRecordsIcon from "@/assets/icon-detailed-records.svg"
+import FullyCustomizableIcon from "@/assets/icon-fully-customizable.svg"
 
 import LinkCard from "@/components/atoms/link-card";
 import IconCard from "@/components/atoms/icon-card";
@@ -11,6 +11,7 @@ import LinkButton from "@/components/atoms/link-button";
 
 import styles from './landing.module.scss'
 import InteractionCard from "@/components/atoms/interaction-card";
+import ShortenedUrlsContextProvider from "@/components/context/shortened-urls";
 
 const LandingView: FC = () => {
   return (
@@ -23,12 +24,14 @@ const LandingView: FC = () => {
 					<LinkButton url="#" label="Get Started" />
 				</div>
 			</section>
-			<section className={styles["main-interaction"]}>
-				<InteractionCard />
-			</section>
-      <section>
-				<LinkCard originalUrl="https://example.com/test" shortenedUrl="https://example.com/test" />
-			</section>
+			<ShortenedUrlsContextProvider>
+				<section className={styles["main-interaction"]}>
+					<InteractionCard />
+				</section>
+				<section>
+					<LinkCard originalUrl="https://example.com/test" shortenedUrl="https://example.com/test" />
+				</section>
+			</ShortenedUrlsContextProvider>
       <section className={styles["marketing-break"]}>
 				<h2>Advanced Statistics</h2>
 				<div>Track how your links are perfrming across the web with our advanced statistics dashboard.</div>

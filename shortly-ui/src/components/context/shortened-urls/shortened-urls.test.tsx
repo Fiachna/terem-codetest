@@ -1,8 +1,8 @@
-import '@testing-library/jest-dom'
-import { act, render } from "@testing-library/react"
-import { screen, waitFor } from '@testing-library/dom'
 import { FC, useContext } from 'react'
-import ShortenedUrlsContextProvider, { shortenedUrlsContext, shortenUrlActionContext } from '.'
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { render } from "@testing-library/react"
+import { screen, waitFor } from '@testing-library/dom'
+import ShortenedUrlsContextProvider, { ShortenedUrlsContext, ShortenUrlActionContext } from '.'
 import { ShortenedUrl } from '@/types/shortened-url'
 
 interface DummyComponentProps {
@@ -10,8 +10,8 @@ interface DummyComponentProps {
 }
 
 const DummyComponent: FC<DummyComponentProps> = ({ urlToShorten }) => {
-	const shortenedurls = useContext(shortenedUrlsContext)
-	const shortenUrlAction = useContext(shortenUrlActionContext)
+	const shortenedurls = useContext(ShortenedUrlsContext)
+	const shortenUrlAction = useContext(ShortenUrlActionContext)
 
 	const onClickAction = () => shortenUrlAction(urlToShorten)
 
@@ -82,7 +82,7 @@ describe("ShortenedUrlsContextProvider", () => {
 
 			const subject = screen.getByTestId("short-url")
 
-			expect(subject).toHaveTextContent(testShortenedUrl)
+			expect(subject.textContent).toBe(testShortenedUrl)
 		})
 	})
 
@@ -107,7 +107,7 @@ describe("ShortenedUrlsContextProvider", () => {
 
 				const subject = await screen.findByTestId("short-url")
 
-				expect(subject).toHaveTextContent(testShortenedUrl)
+				expect(subject.textContent).toBe(testShortenedUrl)
 			})
 
 			it('updates local storage with the new list', async () => {

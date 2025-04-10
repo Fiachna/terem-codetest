@@ -4,8 +4,8 @@ import { createContext, FC, PropsWithChildren, useState } from "react";
 type UrlAction = (urlToShorten: string) => Promise<void>
 type ShortenUrlResponse = { result_url: string }
 
-export const shortenedUrlsContext = createContext<ShortenedUrl[]>([])
-export const shortenUrlActionContext = createContext<UrlAction>(async () => {})
+export const ShortenedUrlsContext = createContext<ShortenedUrl[]>([])
+export const ShortenUrlActionContext = createContext<UrlAction>(async () => {})
 
 
 const ShortenedUrlsContextProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -35,11 +35,11 @@ const ShortenedUrlsContextProvider: FC<PropsWithChildren> = ({ children }) => {
 	}
 
 	return (
-		<shortenedUrlsContext.Provider value={shortenedUrls}>
-			<shortenUrlActionContext.Provider value={shortenUrl}>
+		<ShortenedUrlsContext.Provider value={shortenedUrls}>
+			<ShortenUrlActionContext.Provider value={shortenUrl}>
 				{children}
-			</shortenUrlActionContext.Provider>
-		</shortenedUrlsContext.Provider>
+			</ShortenUrlActionContext.Provider>
+		</ShortenedUrlsContext.Provider>
 	)
 }
 
