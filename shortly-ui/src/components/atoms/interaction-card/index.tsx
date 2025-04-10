@@ -20,6 +20,8 @@ const InteractionCard: FC<BaseComponentProps> = () => {
 		const urlRegex = /^(https?:\/\/)?(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/
 		let isValid = false;
 
+		// console.log("url", !!urlToValidate)
+
 		if (urlToValidate && urlRegex.test(urlToValidate)) {
 			isValid = true;
 			clearValidity()
@@ -43,7 +45,7 @@ const InteractionCard: FC<BaseComponentProps> = () => {
 
 	return (
 		<form className={styles.card} onSubmit={onSubmit}>
-			<TextInput ref={inputRef} label="Link to shorten" name="linkInput" state={validity.isValid ? "default" : "error"} placeholder="Shorten a link here..." validationMessage={validity.invalidReason} className={styles.input} />
+			<TextInput ref={inputRef} label="Link to shorten" name="linkInput" state={validity.isValid ? "default" : "error"} placeholder="Shorten a link here..." validationMessage={validity.invalidReason} className={styles.input} onChange={clearValidity} />
 			<Button actionType="submit" data-testid="interaction-card-submit">Shorten It!</Button>
 		</form>
 	)

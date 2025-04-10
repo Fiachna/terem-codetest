@@ -15,6 +15,7 @@ export default defineConfig({
   plugins: [react(), svgr({ include: '**/*.svg' })],
   test: {
     globals: true,
-    environment: "jsdom"
+    environment: "jsdom",
+    setupFiles: ["./test/vitest.setup.ts"]
   }
 });

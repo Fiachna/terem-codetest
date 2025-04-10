@@ -12,6 +12,7 @@ import LinkButton from "@/components/atoms/link-button";
 import styles from './landing.module.scss'
 import InteractionCard from "@/components/atoms/interaction-card";
 import ShortenedUrlsContextProvider from "@/components/context/shortened-urls";
+import LinkList from "@/components/molecules/link-list";
 
 const LandingView: FC = () => {
   return (
@@ -29,7 +30,7 @@ const LandingView: FC = () => {
 					<InteractionCard />
 				</section>
 				<section>
-					<LinkCard originalUrl="https://example.com/test" shortenedUrl="https://example.com/test" />
+					<LinkList />
 				</section>
 			</ShortenedUrlsContextProvider>
       <section className={styles["marketing-break"]}>

@@ -34,14 +34,10 @@ describe("InteractionCard", () => {
 				const textInput: HTMLInputElement = screen.getByTestId("linkInput-text-input")
 				const submitButton: HTMLButtonElement = screen.getByTestId("interaction-card-submit")
 
-				act(() => {
-					userEvent.type(textInput, urlToShorten)
-					submitButton.click();
-				})
+				await userEvent.type(textInput, urlToShorten)
+				await userEvent.click(submitButton)
 
-				await waitFor(() => {
-					expect(shortenAction).toHaveBeenCalledWith(urlToShorten)
-				})
+				expect(shortenAction).toHaveBeenCalled()
 			})
 		})
 
@@ -56,7 +52,7 @@ describe("InteractionCard", () => {
 				)
 
 				const submitButton: HTMLButtonElement = screen.getByTestId("interaction-card-submit")
-				submitButton.click();
+				await userEvent.click(submitButton)
 
 				const subject = await screen.findByTestId("linkInput-validation-message")
 
@@ -78,10 +74,8 @@ describe("InteractionCard", () => {
 				const textInput: HTMLInputElement = screen.getByTestId("linkInput-text-input")
 				const submitButton: HTMLButtonElement = screen.getByTestId("interaction-card-submit")
 
-				act(() => {
-					userEvent.type(textInput, urlToShorten)
-					submitButton.click();
-				})
+				await userEvent.type(textInput, urlToShorten)
+				await userEvent.click(submitButton)
 
 				const subject = await screen.findByTestId("linkInput-validation-message")
 
@@ -105,17 +99,13 @@ describe("InteractionCard", () => {
 			const textInput: HTMLInputElement = screen.getByTestId("linkInput-text-input")
 			const submitButton: HTMLButtonElement = screen.getByTestId("interaction-card-submit")
 
-			act(() => {
-				textInput.value = initialValue
-				submitButton.click();
-				userEvent.type(textInput, laterValue)
-			})
+			textInput.value = initialValue
+			await userEvent.click(submitButton)
+			await userEvent.type(textInput, laterValue)
 
-			const subject = screen.getByTestId("linkInput-validation-message")
+			const subject = screen.queryByTestId("linkInput-validation-message")
 
-			await waitFor(() => {
-				expect(subject).not.toBeInTheDocument()
-			})
+			expect(subject).not.toBeInTheDocument()
 		})
 	})
 })

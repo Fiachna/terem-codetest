@@ -1,0 +1,11 @@
+@use "../../../styles/vars.scss" as vars;
+
+.copy-button {
+	content: "Copy";
+
+	&:active {
+		content: "Copied!";
+
+		background-color: vars.$neutral-color-3;
+	}
+}
