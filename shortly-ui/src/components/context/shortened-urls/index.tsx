@@ -22,7 +22,7 @@ const ShortenedUrlsContextProvider: FC<PropsWithChildren> = ({ children }) => {
 	const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrl[]>(loadUrlsFromLocalStorage)
 
 	const shortenUrl = async (urlToShorten: string) => {
-		const response = await fetch("https://cleanuri.com/api/v1/shorten", { method: "POST", body: new URLSearchParams({ url: urlToShorten}), headers: { "Content-Type": "application//x-www-form-urlencoded" } })
+		const response = await fetch("https://cleanuri.com/api/v1/shorten", { method: "GET", body: new URLSearchParams({ url: urlToShorten}), headers: { "Content-Type": "application//x-www-form-urlencoded" } })
 		const responseData: ShortenUrlResponse = await response.json()
 		const shortenedUrl: ShortenedUrl = { original: urlToShorten, shortened: responseData.result_url }
 
